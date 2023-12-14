@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, TouchableOpacity } from 'react-native';
+import { View, Image, TouchableOpacity, ImageBackground } from 'react-native';
 
 const Welcome = ({ navigation }) => {
     const handlePress = () => {
@@ -8,9 +8,8 @@ const Welcome = ({ navigation }) => {
 
     return (
         <TouchableOpacity style={{ flex: 1 }} onPress={handlePress}>
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Image source={require('../../assets/wallpaper.png')} />
-            </View>
+            <ImageBackground source={require('../../assets/welcome_page.png')} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            </ImageBackground>
         </TouchableOpacity>
     );
 };
