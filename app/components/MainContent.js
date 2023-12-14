@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { TabView, TabBar } from 'react-native-tab-view';
 import { BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
 
-// import Posts from './Posts';
+import Search from './Search';
 import Settings from './Settings';
 import NavBar from './NavBar';
 import { useNavigation } from '@react-navigation/native';
@@ -12,15 +12,15 @@ const MainContent = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [index, setIndex] = useState(0);
   const [routes] = useState([
-    { key: 'posts', title: 'Posts' },
+    { key: 'search', title: 'Search' },
     { key: 'settings', title: 'Settings' },
   ]);
   const [reset, setReset] = useState(false);
 
   const renderScene = ({ route }) => {
     switch (route.key) {
-      case 'posts':
-        // return <Posts />;
+      case 'search':
+        return <Search />;
       case 'settings':
         return <Settings />;
       default:
