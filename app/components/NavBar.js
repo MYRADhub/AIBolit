@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Modal, FlatList, Dimensions, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, StatusBar, TouchableWithoutFeedback, Modal, FlatList, Dimensions, ScrollView } from 'react-native';
 import { Card, IconButton } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
@@ -172,56 +172,19 @@ export default function NavBar() {
 
   return (
     <>
-      <View style={styles.statusBar} />
+      {/* <View style={styles.statusBar} /> */}
       <View style={styles.navBar}>
         <TouchableOpacity
           onPress={() => {
             // Handle navigation to the home screen here
           }}
         >
-          <Text style={[styles.navText, {marginLeft: horizontalMargin}]}>Weelpy</Text>
+          <Text style={[styles.navText, {marginLeft: horizontalMargin}]}>AIBolit</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => setModalVisible(true)} style={{marginLeft: horizontalMargin1}}>
-          {/* Use the Icon component */}
-          <Icon name="warning" size={30} color="orange" />
+          <Text style={{textAlign: 'center', color: 'white'}}>AIBolit</Text>
         </TouchableOpacity>
       </View>
-        <Modal visible={isModalVisible} animationType="slide">
-          <View style={styles.container}>
-            <View style={styles.modalContainer}>
-              {selectedSituation ? (
-                <View style={{ margin: 20, marginLeft: 30}}>
-                  <Text style={styles.modalTitle}>{selectedSituation.title}</Text>
-                  <Text style={styles.modalDescription}>
-                    {selectedSituation.description}
-                  </Text>
-                  <Text style={styles.modalInstructions}>
-                    {selectedSituation.instructions}
-                  </Text>
-                  <TouchableOpacity onPress={() => setSelectedSituation(null)}>
-                    <Icon name="arrow-back" size={30} />
-                  </TouchableOpacity>
-                </View>
-              ) : (
-                <ScrollView>
-                  {dangerousSituations.map((item) => (
-                    <TouchableWithoutFeedback
-                      onPress={() => handleCardPress(item)}
-                      >
-                      <Card style={{ backgroundColor: 'white', margin: 8, left: 5, borderColor: 5, borderRadius:2, width: horizontalMargin2, height: verticalMargin }}>
-                        <Text style={{ color: 'gray', fontSize: 18, alignContent: 'center', alignSelf: 'center', marginTop: 7 }}>{item.title}</Text>
-                      </Card>
-                    </TouchableWithoutFeedback>
-                ))}
-                </ScrollView>)}
-            </View>
-            <TouchableOpacity onPress={() => setModalVisible(false)} style={{ right: 20 }}>
-              <Icon name="close" size={30} />
-            </TouchableOpacity>
-          </View>
-        </Modal>
-      {/* <View style={styles.container}> */}
-      {/* </View> */}
     </>
   );
 }
@@ -249,13 +212,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginBottom: 20,
   },
-  statusBar: {
-    backgroundColor: 'gray', // If you want a status bar color, set it here
-    height: '3%', // Adjust the height as needed
-  },
   navBar: {
-    
-    backgroundColor: 'green', // Customize the background color
+    marginTop: StatusBar.currentHeight,
+    backgroundColor: '#bba0c3', // Customize the background color
     height: 56, // Adjust the height as needed
     // justifyContent: 'space-between',
     alignItems: 'center',

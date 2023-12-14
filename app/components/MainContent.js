@@ -6,6 +6,7 @@ import { BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
 import Search from './Search';
 import Settings from './Settings';
 import NavBar from './NavBar';
+import Chat from './Chat';
 import { useNavigation } from '@react-navigation/native';
 
 const MainContent = () => {
@@ -13,6 +14,7 @@ const MainContent = () => {
   const [index, setIndex] = useState(0);
   const [routes] = useState([
     { key: 'search', title: 'Search' },
+    { key: 'chat', title: 'Chat'},
     { key: 'settings', title: 'Settings' },
   ]);
   const [reset, setReset] = useState(false);
@@ -21,6 +23,8 @@ const MainContent = () => {
     switch (route.key) {
       case 'search':
         return <Search />;
+      case 'chat':
+        return <Chat />;
       case 'settings':
         return <Settings />;
       default:
