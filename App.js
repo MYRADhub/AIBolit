@@ -39,7 +39,7 @@ export default function App() {
               <Stack.Navigator initialRouteName="Welcome">
                 <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }} />
                 <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-                <Stack.Screen name="SignIn" component={SignIn} options={{ title: 'Sign In' }} />
+                <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }} />
                 <Stack.Screen name="SignUp" component={SignUp} options={{ title: 'Sign Up' }} />
                 <Stack.Screen
                   name="SuccessPage"

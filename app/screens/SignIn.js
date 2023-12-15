@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
+import { Button } from 'native-base'
 import { useNavigation } from '@react-navigation/native';
 import firebaseApp from '../firebase';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -41,25 +42,69 @@ export default function SignInScreen() {
   };
   
 
+  // return (
+  //   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+  //     <Text style={{ fontSize: 24 }}>Sign in</Text>
+  //     <TextInput
+  //       style={{
+  //         width: '80%',
+  //         height: 40,
+  //         borderColor: 'gray',
+  //         borderWidth: 1,
+  //         marginVertical: 10,
+  //       }}
+  //       placeholder="Email Address or Username"
+  //       onChangeText={(text) => setEmail(text)}
+  //     />
+  //     <TextInput
+  //       style={{
+  //         width: '80%',
+  //         height: 40,
+  //         borderColor: 'gray',
+  //         borderWidth: 1,
+  //         marginVertical: 10,
+  //       }}
+  //       placeholder="Password"
+  //       secureTextEntry
+  //       onChangeText={(text) => setPassword(text)}
+  //     />
+  //     <Button
+  //       title="Sign In"
+  //       onPress={handleSubmit}
+  //       disabled={clicked}
+  //       color={'green'}
+  //     />
+  //     <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+  //       <Text style={{ marginVertical: 10 }}>
+  //         Don't have an account? Sign Up
+  //       </Text>
+  //     </TouchableOpacity>
+  //   </View>
+  // );
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text style={{ fontSize: 24 }}>Sign in</Text>
+    <ImageBackground source={require('../../assets/login_page.png')} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <TextInput
         style={{
+          position: 'absolute',
+          top: '58%', // adjust as needed
+          left: '30%', // adjust as needed
           width: '80%',
           height: 40,
-          borderColor: 'gray',
+          borderColor: 'transparent',
           borderWidth: 1,
           marginVertical: 10,
         }}
-        placeholder="Email Address or Username"
+        placeholder="Phone number"
         onChangeText={(text) => setEmail(text)}
       />
       <TextInput
         style={{
+          position: 'absolute',
+          top: '66.5%', // adjust as needed
+          left: '30%', // adjust as needed
           width: '80%',
           height: 40,
-          borderColor: 'gray',
+          borderColor: 'transparent',
           borderWidth: 1,
           marginVertical: 10,
         }}
@@ -67,17 +112,14 @@ export default function SignInScreen() {
         secureTextEntry
         onChangeText={(text) => setPassword(text)}
       />
-      <Button
-        title="Sign In"
-        onPress={handleSubmit}
-        disabled={clicked}
-        color={'green'}
-      />
-      <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-        <Text style={{ marginVertical: 10 }}>
-          Don't have an account? Sign Up
+      <TouchableOpacity onPress={() => navigation.navigate('SignUp')} style={{ position: 'absolute', top:'72.7%', left: '43%' }}>
+        <Text style={{ marginVertical: 10, color: 'gray' }}>
+          Forgot password?
         </Text>
       </TouchableOpacity>
-    </View>
+      <Button position={'absolute'} top={'80%'} backgroundColor={'#bba0c3'}>
+        <Text style={{ color: 'white' }} onPress={handleSubmit}>Log In</Text>
+      </Button>
+    </ImageBackground>
   );
 }

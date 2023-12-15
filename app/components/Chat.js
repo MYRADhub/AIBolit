@@ -30,12 +30,12 @@ const Chat = () => {
 
     const renderMessage = ({ item }) => (
         <View style={{ marginBottom: 10 }}>
-            <Text style={{ fontWeight: 'bold', color: item.sender === 'user' ? '#f4e0a1' : '#b3bedc' }} alignSelf={item.sender === 'user' ? 'flex-end' : 'flex-start'}>
+            <Text style={{ fontWeight: 'bold', color: item.sender === 'user' ? '#f4ce4d' : '#b3bedc', fontSize: 15 }} alignSelf={item.sender === 'user' ? 'flex-end' : 'flex-start'}>
                 {item.sender === 'user' ? 'You' : 'AIbolit'}
             </Text>
             <View
                 style={{
-                    backgroundColor: item.sender === 'user' ? '#c3daac' : '#bba0c3',
+                    backgroundColor: item.sender === 'user' ? '#b0d194' : '#bba0c3',
                     padding: 8,
                     borderRadius: 8,
                     maxWidth: '70%',
@@ -46,14 +46,6 @@ const Chat = () => {
             </View>
         </View>
     );
-    //     <View style={{ marginBottom: 10 }}>
-    //         <Text style={{ fontWeight: 'bold' }}>
-    //             {item.sender === 'user' ? 'You' : 'AI'}
-    //         </Text>
-    //         <Text>{item.text}</Text>
-    //     </View>
-    // );
-
     return (
         <View style={{ flex: 1, padding: 16 }}>
             <FlatList
@@ -66,12 +58,12 @@ const Chat = () => {
             <View mb={10}>
                 <Input
                     size = "lg"
-                    // style={{ flex: 1, marginRight: 10, borderWidth: 1, padding: 8 }}
+                    borderRadius={10}
                     value={inputText}
                     onChangeText={setInputText}
                     placeholder="Type your message..."
                 />
-                <Button onPress={handleSendMessage}>
+                <Button onPress={handleSendMessage} borderRadius={10}>
                     <Text>Send</Text>
                 </Button>
             </View>
