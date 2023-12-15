@@ -53,24 +53,12 @@ const MainContent = () => {
   return (
     <>
       <NavBar />
-      {/* <Text style={{ fontSize: 24, textAlign: 'center', marginVertical: 20 }}>
-        Content Screen
-      </Text> */}
       <TabView
         navigationState={{ index, routes }}
         renderScene={renderScene}
         renderTabBar={renderTabBar}
         onIndexChange={handleTabPress}
       />
-      {/* <BottomNavigation
-        selectedIndex={tabIndex}
-        onSelect={handleTabPress}
-        appearance="noIndicator"
-      >
-        <BottomNavigationTab title="Posts" />
-        <BottomNavigationTab title="Map" />
-        <BottomNavigationTab title="Settings" />
-      </BottomNavigation> */}
     </>
   );
 };
@@ -78,13 +66,15 @@ const MainContent = () => {
 const styles = StyleSheet.create({
   tabBar: {
     backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: 'gray',
     position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
   },
   indicator: {
-    backgroundColor: 'green', // Your desired indicator color
+    backgroundColor: '#bba0c3', // Your desired indicator color
   },
   tabLabel: {
     fontSize: 16,
