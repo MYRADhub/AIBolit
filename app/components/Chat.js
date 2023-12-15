@@ -30,19 +30,19 @@ const Chat = () => {
 
     const renderMessage = ({ item }) => (
         <View style={{ marginBottom: 10 }}>
-            <Text style={{ fontWeight: 'bold', color: item.sender === 'user' ? 'blue' : 'green' }} alignSelf={item.sender === 'user' ? 'flex-end' : 'flex-start'}>
-                {item.sender === 'user' ? 'You' : 'AI'}
+            <Text style={{ fontWeight: 'bold', color: item.sender === 'user' ? '#f4e0a1' : '#b3bedc' }} alignSelf={item.sender === 'user' ? 'flex-end' : 'flex-start'}>
+                {item.sender === 'user' ? 'You' : 'AIbolit'}
             </Text>
             <View
                 style={{
-                    backgroundColor: item.sender === 'user' ? '#bba0c3' : 'lightgreen',
+                    backgroundColor: item.sender === 'user' ? '#c3daac' : '#bba0c3',
                     padding: 8,
                     borderRadius: 8,
                     maxWidth: '70%',
                     alignSelf: item.sender === 'user' ? 'flex-end' : 'flex-start',
                 }}
             >
-                <Text style={{ color: item.sender === 'user' ? 'white' : 'black' }}>{item.text}</Text>
+                <Text style={{ color: 'white' }}>{item.text}</Text>
             </View>
         </View>
     );
