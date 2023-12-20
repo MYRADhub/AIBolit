@@ -2,29 +2,41 @@ import React, { useState } from 'react';
 import { FlatList } from 'react-native';
 import { View, Input, Button, Text } from 'native-base';
 
+let messageCount = 0;
+
 const Chat = () => {
     const [messages, setMessages] = useState([]);
     const [inputText, setInputText] = useState('');
 
-    const aiResponses = ['Hello!', 'How can I assist you?', 'Nice to meet you!'];
+
+    // const aiResponses = ['Hello!', 'How can I assist you?', 'Nice to meet you!'];
 
     const handleSendMessage = () => {
+        messageCount += 1;
         if (inputText.trim() !== '') {
-            setMessages((prevMessages) => [
-                { text: inputText, sender: 'user' },
-                ...prevMessages,
-            ]);
-            setInputText('');
 
-            // Simulate AI response
-            const randomIndex = Math.floor(Math.random() * aiResponses.length);
-            const aiResponse = aiResponses[randomIndex];
-            setTimeout(() => {
+            if (messageCount % 2 === 0) {
                 setMessages((prevMessages) => [
-                    { text: aiResponse, sender: 'ai' },
+                    { text: inputText, sender: 'user' },
                     ...prevMessages,
                 ]);
-            }, 1000);
+                setInputText('');
+                return;
+            }
+            else {
+                // messageCount += 1;
+                setMessages((prevMessages) => [
+                    { text: inputText, sender: 'ai' },
+                    ...prevMessages,
+                ]);
+                setInputText('');
+                return;
+            }
+            // setMessages((prevMessages) => [
+            //     { text: inputText, sender: 'user' },
+            //     ...prevMessages,
+            // ]);
+            // setInputText('');
         }
     };
 

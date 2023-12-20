@@ -179,7 +179,7 @@ export default function NavBar() {
             // Handle navigation to the home screen here
           }}
         >
-          <Text style={[styles.navText, {marginLeft: horizontalMargin}]}>Search</Text>
+          <Text style={[styles.navText, {marginLeft: horizontalMargin}]}>Chat</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => setModalVisible(true)} style={{marginLeft: horizontalMargin1}}>
           <Text style={{textAlign: 'center', color: 'white'}}>AIBolit</Text>

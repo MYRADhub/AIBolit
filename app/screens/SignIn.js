@@ -41,46 +41,6 @@ export default function SignInScreen() {
     }
   };
   
-
-  // return (
-  //   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-  //     <Text style={{ fontSize: 24 }}>Sign in</Text>
-  //     <TextInput
-  //       style={{
-  //         width: '80%',
-  //         height: 40,
-  //         borderColor: 'gray',
-  //         borderWidth: 1,
-  //         marginVertical: 10,
-  //       }}
-  //       placeholder="Email Address or Username"
-  //       onChangeText={(text) => setEmail(text)}
-  //     />
-  //     <TextInput
-  //       style={{
-  //         width: '80%',
-  //         height: 40,
-  //         borderColor: 'gray',
-  //         borderWidth: 1,
-  //         marginVertical: 10,
-  //       }}
-  //       placeholder="Password"
-  //       secureTextEntry
-  //       onChangeText={(text) => setPassword(text)}
-  //     />
-  //     <Button
-  //       title="Sign In"
-  //       onPress={handleSubmit}
-  //       disabled={clicked}
-  //       color={'green'}
-  //     />
-  //     <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-  //       <Text style={{ marginVertical: 10 }}>
-  //         Don't have an account? Sign Up
-  //       </Text>
-  //     </TouchableOpacity>
-  //   </View>
-  // );
   return (
     <ImageBackground source={require('../../assets/login_page.png')} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <TextInput
