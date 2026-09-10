@@ -7,7 +7,7 @@ const Sign = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Weelpy</Text>
+      <Text style={styles.title}>AIBolit</Text>
       <Text style={styles.subtitle}>Forewarned is forearmed</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
