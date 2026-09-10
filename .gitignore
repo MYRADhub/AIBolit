@@ -33,3 +33,6 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# Windows env-var path accidentally created by an unexpanded %ProgramData%
+%ProgramData%/
